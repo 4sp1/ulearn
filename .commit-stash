@@ -1,0 +1,12 @@
+leetcode 380
+
+suboptimal solution of the GetRandom O(1) problem
+
+Before optimization we need to write benchmarks and test tables.
+
+Only after that we can tackle memory and time optimization:
+- The `GetRandom` function is O(N) in time and memory where N is the
+  size of the population (vals * counts).  We should look up how to
+  improve this with adapted data structures and some sort of
+  memoization.
+- `Insert` and `Remove` functions are O(1) and we are fine.
