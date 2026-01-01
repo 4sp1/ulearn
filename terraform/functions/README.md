@@ -19,3 +19,5 @@
   can notice that as well as in [Filesystem](5/README.md) example we need to
   proceed to plan or apply (the latter - apply - is not required) to evaluate
   [`filesha256`](https://opentofu.org/docs/language/functions/sha256/)
+- [Type Conversion](7/main.tftest.hcl) documents basics of type conversion as
+  well as edge cases to be aware of.
