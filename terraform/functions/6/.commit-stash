@@ -1,0 +1,39 @@
+terraform.dev-202601011750.50.functions.6
+
+test(terraform): add comprehensive function examples & tests
+
+Introduces a complete suite of Terraform/OpenTofu function examples
+demonstrating numeric operations, date formatting, collection
+manipulation, filesystem operations, and cryptographic hashing.
+Each example includes both implementation code and corresponding
+test files using the .tftest.hcl format.
+
+The examples cover six key functional areas:
+1. Numeric functions - sum() for basic arithmetic operations
+2. Environment multipliers - lookup() with environment-specific
+   scaling using dev/stage/prod multipliers
+3. Date formatting - formatdate() for RFC3339 timestamp
+   transformations
+4. Collection indexing - element() for list access including
+   negative indexing, and lookup() for map operations with
+   default value fallbacks
+5. Filesystem operations - file() and fileset() with pattern
+   matching, demonstrating wildcard support and suffix trimming.
+   Includes intentional typo (emeral vs emerald) to show
+   contains() behavior with missing elements
+6. Hash functions - sha256() and filesha256() for file integrity
+   verification
+
+Example 5 and 6 demonstrate a critical evaluation timing
+constraint: file() and filesha256() require plan/apply execution
+to evaluate, unlike pure functions which can be tested during
+variable assignment. This is documented with commented-out test
+cases showing the "Unknown condition run" error that occurs when
+attempting premature evaluation in variable assignments.
+
+These examples serve as reference implementations for testing
+Terraform built-in functions and understanding the evaluation
+lifecycle within the test framework. The comprehensive README
+files explain patterns, limitations, and best practices for each
+functional category.
+
